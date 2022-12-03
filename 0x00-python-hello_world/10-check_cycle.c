@@ -8,16 +8,24 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *head;
+	listint_t *nodes[1000];
+	int i, j;
 
-	head = list;
 	if (list == NULL)
 		return (0);
+	i = 0;
 	while (list->next != NULL)
 	{
-		if (list->next == head)
-			return (1);
+		nodes[i] = list;
+		j = 0;
+		while (j <= i)
+		{
+			if (list->next == nodes[j])
+				return (1);
+			j++;
+		}
 		list = list->next;
+		i++;
 	}
 	return (0);
 }
