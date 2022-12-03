@@ -9,7 +9,7 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *nodes[1000];
-	int i, j;
+	int i, j, k, l;
 
 	if (list == NULL)
 		return (0);
@@ -18,11 +18,16 @@ int check_cycle(listint_t *list)
 	{
 		nodes[i] = list;
 		j = 0;
-		while (j <= i)
+		k = i;
+		l = (i / 2) + 2;
+		while (j != l)
 		{
 			if (list->next == nodes[j])
 				return (1);
+			if (list->next == nodes[k])
+				return (1);
 			j++;
+			k--;
 		}
 		list = list->next;
 		i++;
