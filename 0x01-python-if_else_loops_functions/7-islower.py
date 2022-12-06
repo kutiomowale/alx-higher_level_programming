@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # a function that checks for lowercase character
 # without using str.upper() and str.isupper()
 # Returns True if c is lowercase, Returns False otherwise
