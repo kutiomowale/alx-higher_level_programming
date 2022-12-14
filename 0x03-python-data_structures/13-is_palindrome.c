@@ -10,7 +10,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i, j, k, pali[1000];
+	int i, j, k, pali[2000];
 	listint_t *current;
 
 	if (!head)
