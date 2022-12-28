@@ -22,7 +22,7 @@ class Square:
     @size.setter
     def size(self, value):
         try:
-            if type(value) is not int:
+            if type(value) != int:
                 raise TypeError
             if value < 0:
                 raise ValueError
@@ -42,10 +42,10 @@ class Square:
         """
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         try:
-            if type(value) is not tuple:
+            if type(value) != tuple:
                 raise TypeError
             if len(value) != 2:
                 raise TypeError
