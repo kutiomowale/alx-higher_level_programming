@@ -47,6 +47,8 @@ class Square:
                 raise TypeError
             if len(value) != 2:
                 raise TypeError
+            if type(value[0]) != int or type(value[1]) != int:
+                raise TypeError
             if value[0] < 0 or value[1] < 0:
                 raise TypeError
         except TypeError:
