@@ -50,7 +50,7 @@ class Square:
             if value[0] < 0 or value[1] < 0:
                 raise TypeError
         except TypeError:
-            print("position must be a tuple of two positive integers", end='')
+            print("position must be a tuple of 2 positive integers", end='')
             raise
         else:
             self.__position = value
