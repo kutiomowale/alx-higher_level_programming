@@ -1,20 +1,18 @@
 #!/usr/bin/python3
-""" This module contains a class Square that defines a square
-"""
+
+""" This module defines a class for a square """
 
 
 class Square:
-    """ This is a class that defines a square
-    """
+    """ This class defines a square """
     def __init__(self, size=0, position=(0, 0)):
-        """ Initializes the square
-        """
-        self.__size = size
-        self.__position = position
+        """ Initializes an instace of a Square """
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
-        """ returns the size of the square
+        """ Retrieves the size of the square
             value is the size to be set
         """
         return self.__size
@@ -37,7 +35,7 @@ class Square:
 
     @property
     def position(self):
-        """ returns the position of the square
+        """ Retrieves the position of the square
             value is the position to be set
         """
         return self.__position
@@ -52,26 +50,21 @@ class Square:
             if value[0] < 0 or value[1] < 0:
                 raise TypeError
         except TypeError:
-            print("position must be a tuple of 2 positive integers", end='')
+            print("position must be a tuple of two positive integers", end='')
             raise
         else:
             self.__position = value
 
     def area(self):
-        """ Returns the current square area
-        """
+        """ Returns the current square area """
         return self.__size * self.__size
 
     def my_print(self):
-        """ prints in stdout the square with the character #
-            if size is equal to 0, it prints an empty line
-            for position[0] > 0, spaces are used
-            for position[1] > 0, newlines are used
-        """
+        """ Prints in the stdout the square with the character # """
         if self.__size == 0:
             print()
-            return
-        for i in range(self.__position[1]):
-            print()
-        for i in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+        else:
+            for i in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
