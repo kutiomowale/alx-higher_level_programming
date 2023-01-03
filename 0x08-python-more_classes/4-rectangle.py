@@ -26,7 +26,7 @@ class Rectangle:
             able to recreate a new instance by using eval()
         """
         return "Rectangle(" + str(
-                self.__width) + "," + str(self.__height) + ")"
+                self.__width) + ", " + str(self.__height) + ")"
 
     @property
     def width(self):
