@@ -15,7 +15,10 @@ class Rectangle:
     def __str__(self):
         """ Returns a string that uses the '#' character to
             represent the rectangle
+            if width or height is equal to 0, it returns an empty string
         """
+        if self.__width == 0 or self.__height == 0:
+            return ""
         return '\n'.join("#" * self.__width for i in range(self.__height))
 
     @property
