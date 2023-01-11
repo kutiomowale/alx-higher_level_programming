@@ -10,9 +10,7 @@ def square_matrix_simple(matrix=[]):
         matrix (list): The matrix
 
     Returns:
-        list: a new matrix
-              Same size as matrix
-              Each value should be th              e square of the value
-              ofthe input
+        list: a new matrix, Same size as matrix
+              Each value should be the square of the value of the input
     """
     return [[j**2 for j in i] for i in matrix]
