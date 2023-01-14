@@ -33,6 +33,9 @@ TypeError: Each row of the matrix must have the same size
 >>> matrix_divided([[3, 6], [9, 12]], '3')
 Traceback (most recent call last):
 TypeError: div must be a number
->>> matrix_divided([[3, 6], [9, 12]], 0)
+>>> matrix_divided([[3, 6], [9, 12]])
 Traceback (most recent call last):
-ZeroDivisionError: division by zero
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
