@@ -1,0 +1,28 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("My name is Mudryk. I am a Blue. Chelse for life   ")
+My name is Mudryk.
+<BLANKLINE>
+I am a Blue.
+<BLANKLINE>
+Chelse for life
+>>> text_indentation("    My name is Mudryk      ")
+My name is Mudryk
+>>> text_indentation("  I have a basket. There are 3 balls inside it: a blue ball, a red ball and a white ball. What is the probability of a blind-folded person picking a blue ball from the basket?     What of a black ball     ")
+I have a basket.
+<BLANKLINE>
+There are 3 balls inside it:
+<BLANKLINE>
+a blue ball, a red ball and a white ball.
+<BLANKLINE>
+What is the probability of a blind-folded person picking a blue ball from the basket?
+<BLANKLINE>
+What of a black ball
+>>> text_indentation("")
+>>> text_indentation("    		  ")
+<BLANKLINE>
+>>> text_indentation()
+Traceback (most recent call last):   
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation(12)
+Traceback (most recent call last):   
+TypeError: text must be a string
