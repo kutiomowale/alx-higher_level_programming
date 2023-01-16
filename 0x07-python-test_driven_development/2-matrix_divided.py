@@ -49,5 +49,7 @@ def matrix_divided(matrix, div):
 
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
+    if div == float('inf') or div == -float('inf') or div != div:
+        div = 10
 
     return [[round(i / div, 2) for i in row] for row in matrix]
