@@ -35,4 +35,4 @@ def text_indentation(text):
     if len(buff) != 0:
         text_to_print = ''.join(buff)
         text_to_print = text_to_print.strip()
-        print(text_to_print)
+        print(text_to_print, end='')
