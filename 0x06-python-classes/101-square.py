@@ -64,6 +64,8 @@ class Square:
         """ Returns a string representation of a square using '#' characters
             and spaces
         """
+        if self.__size == 0:
+            return ""
         str_1 = "\n" * self.__position[1]
         str_2 = "\n".join([" " * self.__position[0]
                           + "#" * self.__size for i in range(self.size)])
