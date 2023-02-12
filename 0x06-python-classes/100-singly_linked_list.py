@@ -47,7 +47,7 @@ class SinglyLinkedList:
            one node number by line
         """
         if self.__head is None:
-            return
+            return ""
         temp = []   # To store each data of the linked lists(in string form)
         trav = self.__head  # Used to traverse the linked list
         while trav:
