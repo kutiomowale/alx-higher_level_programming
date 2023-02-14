@@ -70,7 +70,7 @@ class Rectangle:
     def width(self, value):
         if type(value) != int:
             raise TypeError('width must be an integer')
-        elif value < 0:
+        if value < 0:
             raise ValueError('width must be >= 0')
         else:
             self.__width = value
@@ -117,13 +117,12 @@ class Rectangle:
         """
         if isinstance(rect_1, Rectangle) is False:
             raise TypeError('rect_1 must be an instance of Rectangle')
-        elif isinstance(rect_2, Rectangle) is False:
+        if isinstance(rect_2, Rectangle) is False:
             raise TypeError('rect_2 must be an instance of Rectangle')
         else:
             if rect_1.area() >= rect_2.area():
                 return rect_1
-            else:
-                return rect_2
+            return rect_2
 
     @classmethod
     def square(cls, size=0):
@@ -133,4 +132,4 @@ class Rectangle:
         Returns: a new Rectangle instance with width == height == size
 
         """
-        return Rectangle(size, size)
+        return cls(size, size)
