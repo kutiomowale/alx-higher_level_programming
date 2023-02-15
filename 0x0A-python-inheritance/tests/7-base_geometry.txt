@@ -1,0 +1,18 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry	# Get the class
+>>> bg = BaseGeometry()	# Create class instance
+>>> bg.area()	# Ensure area method raises the right exception
+Traceback (most recent call last):
+Exception: area() is not implemented
+>>> bg.integer_validator("Triangle", 5)	# No exception raised with an integer value greater than 0
+>>> bg.integer_validator("Triangle", "three")	# Raises an exception with a non int value
+Traceback (most recent call last):
+TypeError: Triangle must be an integer
+>>> bg.integer_validator("Triangle", 5.6) # Also a float value
+Traceback (most recent call last):
+TypeError: Triangle must be an integer
+>>> bg.integer_validator("Triangle", 0) # A value equal to 0
+Traceback (most recent call last):
+ValueError: Triangle must be greater than 0
+>>> bg.integer_validator("Triangle", -5) # A value less than 0
+Traceback (most recent call last):
+ValueError: Triangle must be greater than 0
