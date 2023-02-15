@@ -10,9 +10,31 @@ TypeError: Triangle must be an integer
 >>> bg.integer_validator("Triangle", 5.6) # Also a float value
 Traceback (most recent call last):
 TypeError: Triangle must be an integer
+>>> bg.integer_validator("Triangle", (5,)) # A Tuple
+Traceback (most recent call last):
+TypeError: Triangle must be an integer
+>>> bg.integer_validator("Triangle", [5]) # A list
+Traceback (most recent call last):
+TypeError: Triangle must be an integer
+>>> bg.integer_validator("Triangle", {5, 3}) # A set
+Traceback (most recent call last):
+TypeError: Triangle must be an integer
+
+>>> bg.integer_validator("Triangle", True) # A bool
+Traceback (most recent call last):
+TypeError: Triangle must be an integer
+>>> bg.integer_validator("Triangle", None) # None
+Traceback (most recent call last):
+TypeError: Triangle must be an integer
 >>> bg.integer_validator("Triangle", 0) # A value equal to 0
 Traceback (most recent call last):
 ValueError: Triangle must be greater than 0
 >>> bg.integer_validator("Triangle", -5) # A value less than 0
 Traceback (most recent call last):
 ValueError: Triangle must be greater than 0
+>>> bg.integer_validator() # No argument to integer_validator method
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> bg.integer_validator("Triangle") # Only one argument
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
