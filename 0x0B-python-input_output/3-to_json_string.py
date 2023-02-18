@@ -9,7 +9,6 @@ def to_json_string(my_obj):
     A function that returns the JSON representation of an object (string)
 
     Exceptions are not managed if the object can’t be serialized.
-    and returns the number of characters added.
 
     Args:
         my_obj: The object
