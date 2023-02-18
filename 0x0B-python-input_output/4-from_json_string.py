@@ -4,7 +4,7 @@ Function definition for from_json_string"""
 
 
 def from_json_string(my_str):
-    """To JSON string
+    """From JSON string to Object
 
     A function that returns an object (Python data structure)
     represented by a JSON string
@@ -17,6 +17,6 @@ def from_json_string(my_str):
     Returns:
         The object
 
-"""
+    """
     import json
     return json.loads(my_str)
