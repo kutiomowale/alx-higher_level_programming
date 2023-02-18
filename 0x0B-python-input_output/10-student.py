@@ -28,6 +28,7 @@ class Student:
         Args:
             attrs: If attrs is a list of strings, only attribute names
             contained in this list must be retrieved.
+            Otherwise, all attributes must be retrieved
 
         Returns:
             A filtered dictionary representation of a Student instance
