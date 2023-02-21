@@ -15,6 +15,22 @@ status codes are printed in ascending order
 
 """
 import sys
+
+
+def print_stats(total, possible, appeared):
+    """Prints the required stats
+
+    Args:
+        total (int): The total file size
+        possible (list): List os possible status codes
+        appeared: (dict): Status codes that have appeared with their numbers
+    """
+    print("File size: {}".format(total))
+    for code in possible:
+        if code in appeared:
+            print("{}: {}".format(code, appeared[code]))
+
+
 try:
     total_file_size = 0
     """int: The sum of all previous file sizes"""
@@ -38,12 +54,7 @@ try:
         so it is removed)"""
         total_file_size += file_size
         if i % 10 == 0:
-            print("File size: {}".format(total_file_size))
-            for code in possible_codes:
-                if code in appeared_codes:
-                    print("{}: {}".format(code, appeared_codes[code]))
+            print_stats(total_file_size, possible_codes, appeared_codes)
+    print_stats(total_file_size, possible_codes, appeared_codes)
 except KeyboardInterrupt:
-    print("File size: {}".format(total_file_size))
-    for code in possible_codes:
-        if code in appeared_codes:
-            print("{}: {}".format(code, appeared_codes[code]))
+    print_stats(total_file_size, possible_codes, appeared_codes)
