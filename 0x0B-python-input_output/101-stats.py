@@ -37,7 +37,7 @@ try:
         """int: File size for a line (sys.stin includes \n,
         so it is removed)"""
         total_file_size += file_size
-        if i >= 10 and i % 10 == 0:
+        if i % 10 == 0:
             print("File size: {}".format(total_file_size))
             for code in possible_codes:
                 if code in appeared_codes:
