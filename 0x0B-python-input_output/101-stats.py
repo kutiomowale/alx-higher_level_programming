@@ -37,7 +37,7 @@ try:
     possible_codes = [200, 301, 400, 401, 403, 404, 405, 500]
     """list: Possible status codes"""
     appeared_codes = {}
-    """dict: dictionary of code and number pairs that have appaired"""
+    """dict: dictionary of code and number pairs that have appeared"""
     for i, line in enumerate(sys.stdin):
         i += 1
         """int: Line number starting from 1"""
