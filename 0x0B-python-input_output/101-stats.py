@@ -43,8 +43,8 @@ try:
         """int: Line number starting from 1"""
         line = line.split()
         """list: line text split by whitespace. i is line index from 0"""
-        if len(line) != 6: # line should originally be a text of 6 strings
-            # including the "-" character
+        if len(line) != 9:  # Input format has 8 whitespace characters
+            # so calling split on it creates a list of 9 elements
             break
         new_code = int(line[-2])
         """int: Status code for a line"""
