@@ -30,5 +30,23 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(b2.x, 3)
         self.assertEqual(b2.y, 0)
 
+    def test_exceptions(self):
         with self.assertRaises(AttributeError):
-            b1.area
+            b1 = Rectangle(10, 10)
+            a = b1.p
+        with self.assertRaises(TypeError):
+            b1 = Rectangle("10", 10)
+        with self.assertRaises(TypeError):
+            b1 = Rectangle(10, "10")
+        with self.assertRaises(TypeError):
+            b1 = Rectangle(10, 10, "10")
+        with self.assertRaises(TypeError):
+            b1 = Rectangle(10, 10, 10, "10")
+        with self.assertRaises(ValueError):
+            b1 = Rectangle(0, 10)
+        with self.assertRaises(ValueError):
+            b1 = Rectangle(10, -5)
+        with self.assertRaises(ValueError):
+            b1 = Rectangle(10, 10, -5)
+        with self.assertRaises(ValueError):
+            b1 = Rectangle(10, 10, 10, -5)
