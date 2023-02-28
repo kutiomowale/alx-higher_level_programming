@@ -75,5 +75,5 @@ class Rectangle(Base):
         if type(val) is not int:
             raise TypeError("y must be an integer")
         if val < 0:
-            raise ValueError("x must be >= 0")
+            raise ValueError("y must be >= 0")
         self.__y = val
