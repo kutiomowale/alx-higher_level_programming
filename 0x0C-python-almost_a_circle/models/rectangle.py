@@ -138,8 +138,8 @@ class Rectangle(Base):
             else:
                 pass
         else:
-            if id in kwargs:
-                self.id = kwargs[id]
+            if "id" in kwargs:
+                self.id = kwargs["id"]
             if "width" in kwargs:
                 self.__width = kwargs["width"]
             if "height" in kwargs:
