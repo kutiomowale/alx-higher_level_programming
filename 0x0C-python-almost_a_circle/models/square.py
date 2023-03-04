@@ -16,12 +16,10 @@ class Square(Rectangle):
             id (int): optional argument for id attribute
 
         """
-        width, height = size, size
-        super().__init__(width, height, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """Returns [Square] (<id>) <x>/<y> - <size>
         where size is the width or height"""
         return ("[Square] ({}) {}/{} - {}"
-                .format(self.id, self.__x, self.__y,
-                        self.__width))
+                .format(self.id, self.x, self.y, self.width))
