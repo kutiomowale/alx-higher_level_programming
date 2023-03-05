@@ -40,7 +40,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute
- 
+
         If *args exists and is not empty:
         1st argument should be the id attribute
         2nd argument should be the size attribute
@@ -49,7 +49,7 @@ class Square(Rectangle):
         else:
         *kwargs is used,
         where each key represents an attribute to the instance
- 
+
         Args:
             *args (list): Argument list. Used if it exists and is not empty
             *kwargs (dict): dictionary of attribute-value pairs
