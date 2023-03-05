@@ -125,8 +125,7 @@ class Rectangle(Base):
             *kwargs (dict): dictionary of attribute-value pairs
         """
         if args is not None and len(args) > 0:
-            if len(args) > 0:
-                self.id = args[0]
+            self.id = args[0]
             if len(args) > 1:
                 self.__width = args[1]
             if len(args) > 2:
@@ -135,8 +134,6 @@ class Rectangle(Base):
                 self.__x = args[3]
             if len(args) > 4:
                 self.__y = args[4]
-            else:
-                pass
         else:
             if "id" in kwargs:
                 self.id = kwargs["id"]
