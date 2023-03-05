@@ -17,12 +17,11 @@ class Square(Rectangle):
 
         """
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     @property
     def size(self):
         """Retrieves the size of a square"""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, val):
@@ -30,7 +29,6 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if val <= 0:
             raise ValueError("width must be > 0")
-        self.__size = val
         self.width = val
         self.height = val
 
