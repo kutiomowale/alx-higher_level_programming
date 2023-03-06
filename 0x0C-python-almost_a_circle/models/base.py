@@ -34,6 +34,6 @@ class Base:
             Otherwise, return the JSON string representation of
             list_dictionaries
         """
-        if list_dictionaries and len(list_dictionaries) > 0:
-            return json.dumps(list_dictionaries)
-        return "[]"
+        if not list_dictionaries:
+            return "[]"
+        return json.dumps(list_dictionaries)
