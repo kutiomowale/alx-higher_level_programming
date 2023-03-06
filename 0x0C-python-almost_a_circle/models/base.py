@@ -4,6 +4,7 @@ Class definition for Base
 """
 
 
+import json
 class Base:
     """Base class"""
     __nb_objects = 0
@@ -33,7 +34,6 @@ class Base:
             Otherwise, return the JSON string representation of
             list_dictionaries
         """
-        import json
         if list_dictionaries and len(list_dictionaries) > 0:
             return json.dumps(list_dictionaries)
         return "[]"
