@@ -34,7 +34,11 @@ class Base:
             Otherwise, return the JSON string representation of
             list_dictionaries
         """
-# if not list_dictionaries:
-        if list_dictionaries is None or list_dictionaries == []:
+        if not list_dictionaries:
             return "[]"
-        return json.dumps(list_dictionaries)
+        if type(list_dictionaries) is list:
+            for dic in list_dictionaries:
+                if type(dic) is not dict:
+                    return "[]"
+            return json.dumps(list_dictionaries)
+        return "[]"
