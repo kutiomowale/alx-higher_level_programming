@@ -63,3 +63,19 @@ class Base:
         json_dictionary = cls.to_json_string(new_list)
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(json_dictionary)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Static method returns the listof
+        the JSON string representation json_string:
+
+        Args:
+            json_string (str): is a string representing a list of dictionaries
+
+        Returns:
+            An empty list, If json_string is None or empty
+            Otherwise, it return the list represented by json_string
+        """
+        if not json_string:
+            return []
+        return json.loads(json_string)
