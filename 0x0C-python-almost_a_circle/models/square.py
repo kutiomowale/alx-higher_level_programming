@@ -73,7 +73,7 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """Returns the dictionary representation of a Rectangle:
+        """Returns the dictionary representation of a square:
 
         This dictionary must contain:
 

@@ -42,3 +42,24 @@ class Base:
             if type(dic) is not dict:
                 return
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a file:
+
+        Args:
+        list_objs (list): is a list of instances who inherits of Base
+        - example: list of Rectangle or list of Square instances
+        If list_objs is None, save an empty list
+        The filename must be: <Class name>.json - example: Rectangle.json
+        The static method to_json_string is used
+        The file is overwritten if it already exists
+        """
+        new_list = []
+        if list_objs:
+            for obj in list_objs:
+                if isinstance(obj, Base):
+                    new_list.append(obj.to_dictionary())
+        json_dictionary = cls.to_json_string(new_list)
+        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
+            f.write(json_dictionary)
