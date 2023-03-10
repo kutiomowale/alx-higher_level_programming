@@ -36,11 +36,6 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        if type(list_dictionaries) is not list:
-            return
-        for dic in list_dictionaries:
-            if type(dic) is not dict:
-                return
         return json.dumps(list_dictionaries)
 
     @classmethod
