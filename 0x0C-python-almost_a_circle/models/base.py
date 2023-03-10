@@ -79,3 +79,25 @@ class Base:
         if not json_string:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Class method that returns an instance with all attributes
+        already set
+
+        It does this by creating a “dummy” instance i.e.
+        a Rectangle or Square instance with “dummy”
+        mandatory attributes (width, height, size, etc.)
+
+        It then calls the update instance method to this “dummy” instance
+        to apply your real values
+
+        Args:
+            **dictionary can be thought of as a double pointer to a dictionary
+
+        Returns:
+            The new instance
+        """
+        new_obj = cls(5, 5)
+        new_obj.update(**dictionary)
+        return new_obj
