@@ -98,6 +98,9 @@ class Base:
         Returns:
             The new instance
         """
-        new_obj = cls(5, 5)
+        if cls.__name__ == "Square":
+            new_obj = cls(1)
+        else:
+            new_obj = cls(1, 1)
         new_obj.update(**dictionary)
         return new_obj
