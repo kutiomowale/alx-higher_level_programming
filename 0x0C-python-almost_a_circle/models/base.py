@@ -123,3 +123,67 @@ class Base:
                 return list_text_objs
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Writes the csv representation of list_objs to a file:
+
+        Format of the CSV:
+        Rectangle: <id>,<width>,<height>,<x>,<y>
+        Square: <id>,<size>,<x>,<y>
+
+        Args:
+        list_objs (list): is a list of instances who inherits of Base
+        - example: list of Rectangle or list of Square instances
+        If list_objs is None, save an empty list
+        The filename must be: <Class name>.csv - example: Rectangle.csv
+        The file is overwritten if it already exists
+        """
+        new_list = []
+        if list_objs:
+            for obj in list_objs:
+                if isinstance(obj, Base):
+                    if cls.__name__ == "Rectangle":
+                        new_list.append("{},{},{},{},{}\n".format(obj.id,
+                                        obj.width, obj.height, obj.x, obj.y))
+                    if cls.__name__ == "Square":
+                        new_list.append("{},{},{},{}\n".format(obj.id,
+                                        obj.size, obj.x, obj.y))
+        csv_string = "".join(new_list)
+        with open("{}.csv".format(cls.__name__), "w", encoding="utf-8") as f:
+            f.write(csv_string)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Class method that returns a list of instances
+        generated from a csv file
+
+        The filename must be: <Class name>.csv - example: Rectangle.csv
+
+        Returns:
+            An empty list, if the file doesn't exist
+            Otherwise, return a list of instances - the type of these
+            instances depends on cls (current class using this method)
+        """
+        try:
+            with open("{}.csv".format(cls.__name__), "r",
+                      encoding="utf-8") as f:
+                csv_list = list(f)
+                if len(csv_list) == 0:
+                    return []
+                req_list = []
+                for i in csv_list:
+                    temp_list = i.split(",")
+                    temp_list = [int(j) for j in temp_list]
+                    if cls.__name__ == "Rectangle":
+                        new_obj = cls(temp_list[1], temp_list[2], temp_list[3],
+                                      temp_list[4], temp_list[0])
+                        req_list.append(new_obj)
+                    if cls.__name__ == "Square":
+                        new_obj = cls(temp_list[1], temp_list[2], temp_list[3],
+                                      temp_list[0])
+                        req_list.append(new_obj)
+
+                return req_list
+        except FileNotFoundError:
+            return []
