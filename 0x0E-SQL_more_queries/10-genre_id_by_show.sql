@@ -1,4 +1,4 @@
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download
+Import the database dump from hbtn_0d_tvshows to your MySQL server: [download] (https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql)
 
 Write a script that lists all shows contained in hbtn_0d_tvshows that have at least one genre linked.
 
