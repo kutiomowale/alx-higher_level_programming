@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Filter states
+"""Cities by states
 
-This module a script lists all cities from the database hbtn_0e_4_usa
+This module lists all cities from the database hbtn_0e_4_usa
 
 The MySQLdb module is used
 

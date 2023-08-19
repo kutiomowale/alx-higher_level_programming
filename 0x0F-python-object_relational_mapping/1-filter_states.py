@@ -8,7 +8,7 @@ in a particular mysql database
 The MySQLdb module is used
 
 The mysql username, password and the database name
-arw passed as command line arguments
+are passed as command line arguments
 
 """
 if __name__ == '__main__':
